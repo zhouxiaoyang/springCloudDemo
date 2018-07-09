@@ -1,0 +1,11 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8001/eureka/
+server:
+  port: 8004
+  servlet:
+    context-path: /monitor
+spring:
+  application:
+    name: project-api
