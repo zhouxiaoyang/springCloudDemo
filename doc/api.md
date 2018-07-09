@@ -38,3 +38,9 @@ identifyingCode:"A12B"
 	"data": null
 }	
 ```
+
+###权限管理
+
+待开发
+```
+```
