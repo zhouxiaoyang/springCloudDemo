@@ -13,5 +13,5 @@ import java.util.Map;
  */
 public interface UserService {
    // public User getUser(String tel, String  password,String code, String uuid);
-    public User getUser(Map<String,String> map );
+    public User getUser(Map<String,String> map,HttpServletRequest request );
 }

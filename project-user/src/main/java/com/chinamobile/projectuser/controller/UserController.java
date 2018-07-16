@@ -7,12 +7,14 @@ import com.chinamobile.projectuser.util.ResultVoUtil;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
 import java.util.Map;
 
@@ -42,18 +44,18 @@ public class UserController {
 //    }
 
     @PostMapping("login")
-    public ResultVo login(@RequestBody Map <String,String> map) {
+    public ResultVo login(@RequestBody Map <String,String> map, HttpServletRequest request) {
         String tel=map.get("tel");
         String code=map.get("identifyingCode");
         String password=map.get("password");
         String uuid=map.get("uuid");
         System.out.println( tel+":" +code+"--" + password);
-        User thisUser = userService.getUser(map);
+        User thisUser = userService.getUser(map,request);
       //  User thisUser = userService.getUser(user,code,uuid);
         if (thisUser == null) {
             return ResultVoUtil.fail();
         }
-
+      //  BeanUtils.copyProperties();
         log.info(thisUser.getUsername() + "登录成功!" + new Date());
         //return ResultVoUtil.success(0, " 登录成功!", null);
         return ResultVoUtil.success(0,thisUser.getUsername()+" 登录成功!",null);

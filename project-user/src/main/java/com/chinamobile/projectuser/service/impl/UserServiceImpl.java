@@ -3,10 +3,13 @@ package com.chinamobile.projectuser.service.impl;
 import com.chinamobile.projectuser.dao.UserDao;
 import com.chinamobile.projectuser.form.User;
 import com.chinamobile.projectuser.service.UserService;
+import com.chinamobile.projectuser.util.CookieUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.Map;
 
 
@@ -18,6 +21,7 @@ import java.util.Map;
  */
 @Service
 public class UserServiceImpl implements UserService {
+
     @Autowired
     UserDao userDao;
 
@@ -25,10 +29,12 @@ public class UserServiceImpl implements UserService {
     StringRedisTemplate stringRedisTemplate;
 
     @Override
-    public User getUser(Map<String,String> map) {
+    public User getUser(Map<String,String> map, HttpServletRequest request) {
         String uuid=map.get("uuid");
         String code=map.get("identifyingCode");
-        String codeIn=stringRedisTemplate.opsForValue().get(uuid);
+      // CookieUtil.get()
+        String uuidByCookie=CookieUtil.get(request,"codeaddress").getValue();
+        String codeIn=stringRedisTemplate.opsForValue().get(uuidByCookie);
         System.out.println("codeIn=="+codeIn+"   ---- codeby qian:="+code);
         if (!code.equalsIgnoreCase(codeIn)) {
             System.out.println("验证码不对!!");
@@ -38,4 +44,6 @@ public class UserServiceImpl implements UserService {
       //  System.out.println("sessionID==="+.getSession().getId());
         return userDao.getUser(map);
     }
+
+
 }
