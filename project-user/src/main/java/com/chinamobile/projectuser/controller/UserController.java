@@ -44,7 +44,7 @@ public class UserController {
 //    }
 
     @PostMapping("login")
-    public ResultVo login(@RequestBody Map <String,String> map, HttpServletRequest request) {
+    public ResultVo login( @RequestBody Map <String,String> map, HttpServletRequest request) {
         String tel=map.get("tel");
         String code=map.get("identifyingCode");
         String password=map.get("password");

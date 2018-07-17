@@ -42,7 +42,7 @@ public class CodeController {
 
 
     @RequestMapping("getCode")
-    public void getCode(HttpServletRequest request, HttpServletResponse response, String uuid) {
+    public void getCode(HttpServletRequest request, HttpServletResponse response) {
         response.setDateHeader("Expires", 0);
         response.setHeader("Cache-Control", "no-cache");
         response.setHeader("Pragma", "no-cache");
@@ -56,7 +56,7 @@ public class CodeController {
 
             uuidCookie = UuidUtil.getUUID();
             // response.addCookie();
-            CookieUtil.addCookie(response, "codeaddress", uuidCookie, 60);
+            CookieUtil.addCookie(response, "codeaddress", uuidCookie, -1);
         } else {
             uuidCookie = CookieUtil.get(request, "codeaddress").getValue();
         }
