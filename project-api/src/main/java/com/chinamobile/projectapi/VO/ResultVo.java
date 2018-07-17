@@ -7,11 +7,11 @@ package com.chinamobile.projectapi.VO;
  * @Modified by:
  *
  */
-public class ResultVo implements java.io.Serializable{
+public class ResultVo {
     /**
      *
      */
-    private static final long serialVersionUID = 1L;
+    //private static final long serialVersionUID = 1L;
 
 
     private int code;

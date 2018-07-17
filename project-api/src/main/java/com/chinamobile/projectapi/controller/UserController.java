@@ -1,12 +1,16 @@
 package com.chinamobile.projectapi.controller;
 
 import com.chinamobile.projectapi.VO.ResultVo;
-import com.chinamobile.projectapi.service.CodeService;
+import com.chinamobile.projectapi.client.UserClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.util.Map;
 
 /**
  * @Description:
@@ -16,14 +20,20 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 public class UserController {
+
     @Autowired
-    CodeService codeService;
+    UserClient userClient;
 
-    @PostMapping("login")
-    public ResultVo login(String  tel,String password, String code, String uuid){
-
-        return codeService.login(tel,password,code,uuid);
+    @GetMapping("getCode")
+    public  void getCode(){
+        userClient.getCode( );
     }
+
+//    @PostMapping("login")
+//    public Object login(@RequestBody  Map<String,String> map, HttpServletRequest request){
+//
+//        return userClient.login(map,request);
+//    }
 
 //    @GetMapping("getCode")
 //    public void getCode(){
