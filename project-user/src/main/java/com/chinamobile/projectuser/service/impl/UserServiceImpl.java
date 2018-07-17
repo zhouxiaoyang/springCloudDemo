@@ -9,7 +9,7 @@ import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+
 import java.util.Map;
 
 
@@ -30,9 +30,9 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User getUser(Map<String,String> map, HttpServletRequest request) {
-        String uuid=map.get("uuid");
+        //String uuid=map.get("uuid");
         String code=map.get("identifyingCode");
-      // CookieUtil.get()
+
         String uuidByCookie=CookieUtil.get(request,"codeaddress").getValue();
         String codeIn=stringRedisTemplate.opsForValue().get(uuidByCookie);
         System.out.println("codeIn=="+codeIn+"   ---- codeby qian:="+code);
@@ -41,7 +41,6 @@ public class UserServiceImpl implements UserService {
             return  null;
         }
 
-      //  System.out.println("sessionID==="+.getSession().getId());
         return userDao.getUser(map);
     }
 

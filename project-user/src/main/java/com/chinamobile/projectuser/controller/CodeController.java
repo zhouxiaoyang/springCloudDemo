@@ -1,6 +1,5 @@
 package com.chinamobile.projectuser.controller;
 
-import com.chinamobile.projectuser.datavo.ResultVo;
 import com.chinamobile.projectuser.util.*;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,10 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.imageio.ImageIO;
 import javax.servlet.ServletOutputStream;
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.awt.image.RenderedImage;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
@@ -30,7 +27,7 @@ import java.util.concurrent.TimeUnit;
 @RestController
 public class CodeController {
     @Autowired
-    private StringRedisTemplate stringRedisTemplate;
+    StringRedisTemplate stringRedisTemplate;
 
     @GetMapping("getUUID")
     public Object getUUID() {
@@ -53,25 +50,17 @@ public class CodeController {
         String code = code1.getVerificationCodeValue();
         String uuidCookie;
         if (CookieUtil.get(request, "codeaddress") == null) {
-
             uuidCookie = UuidUtil.getUUID();
-            // response.addCookie();
             CookieUtil.addCookie(response, "codeaddress", uuidCookie, -1);
         } else {
             uuidCookie = CookieUtil.get(request, "codeaddress").getValue();
         }
+        //一分钟过期
         stringRedisTemplate.opsForValue().set(uuidCookie, code, 60, TimeUnit.SECONDS);
-        System.out.println("redis code===" + stringRedisTemplate.opsForValue().get(uuidCookie)
-                + "---" + uuidCookie);
-
-
-        //System.out.println("uuid==="+uuid);
-
-        //   request.getSession().setAttribute("code", code);
-        // redisManager.set(MyConstant.SSO_CODE_TIMEOUT_KEY+request.getSession().getId(), num, MyConstant.SSO_CODE_TIMEOUT);
         ServletOutputStream out = null;
+
         try {
-//            code1.getBuffImage().getAlphaRaster().av
+
             out = response.getOutputStream();
             ImageIO.write(code1.getBuffImage(), "jpeg", out);
         } catch (IOException e) {
