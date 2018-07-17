@@ -12,5 +12,5 @@
 ```
 这个是用户登录服务
 ```
-
->* project-api为restTemplate请求用户服务 未完成
+ project-api修改为feign请求方式  请求用户服务接口, 
+ 目前获取验证码有问题  待解决
