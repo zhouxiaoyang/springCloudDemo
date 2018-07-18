@@ -13,7 +13,7 @@
         <module>project-server</module>
         <module>project-user</module>
         <module>project-api</module>
-
+        <module>project-config</module>
     </modules>
 
     <repositories>
