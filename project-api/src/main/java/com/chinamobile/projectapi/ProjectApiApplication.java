@@ -8,7 +8,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @EnableEurekaClient
 @SpringBootApplication
-@EnableFeignClients
+@EnableFeignClients(basePackages = "com.chinamobile.projectapi.client")
 public class ProjectApiApplication {
 
     public static void main(String[] args) {
