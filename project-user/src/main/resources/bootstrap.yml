@@ -1,0 +1,18 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8001/eureka/
+server:
+  port: 8002
+  servlet:
+    context-path: /project
+spring:
+  application:
+    name: project-user
+  cloud:
+      config:
+        discovery:
+          enabled: true
+          service-id: PROJECT-CONFIG
+        profile: test
+
