@@ -1,4 +1,4 @@
-package com.chinamobile.projectserver;
+package com.coco.projectserver;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

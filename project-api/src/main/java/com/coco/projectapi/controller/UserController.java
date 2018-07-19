@@ -1,7 +1,7 @@
-package com.chinamobile.projectapi.controller;
+package com.coco.projectapi.controller;
 
-import com.chinamobile.projectapi.VO.ResultVo;
-import com.chinamobile.projectapi.client.UserClient;
+import com.coco.projectapi.VO.ResultVo;
+import com.coco.projectapi.client.UserClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;

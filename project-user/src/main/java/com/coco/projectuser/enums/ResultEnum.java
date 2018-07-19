@@ -1,4 +1,4 @@
-package com.chinamobile.projectuser.enums;
+package com.coco.projectuser.enums;
 
 /**
  * @Description:

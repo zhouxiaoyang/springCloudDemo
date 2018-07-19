@@ -1,4 +1,4 @@
-package com.chinamobile.projectapi;
+package com.coco.projectapi;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

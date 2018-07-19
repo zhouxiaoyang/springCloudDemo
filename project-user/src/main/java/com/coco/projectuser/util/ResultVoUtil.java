@@ -1,8 +1,8 @@
-package com.chinamobile.projectuser.util;
+package com.coco.projectuser.util;
 
 
-import com.chinamobile.projectuser.datavo.ResultVo;
-import com.chinamobile.projectuser.enums.ResultEnum;
+import com.coco.projectuser.datavo.ResultVo;
+import com.coco.projectuser.enums.ResultEnum;
 
 /**
  * @Description: 结果集util

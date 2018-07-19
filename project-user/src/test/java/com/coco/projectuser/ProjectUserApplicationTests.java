@@ -1,4 +1,4 @@
-package com.chinamobile.projectserver;
+package com.coco.projectuser;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class ProjectServerApplicationTests {
+public class ProjectUserApplicationTests {
 
 	@Test
 	public void contextLoads() {

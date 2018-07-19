@@ -1,4 +1,4 @@
-package com.chinamobile.projectuser.util;
+package com.coco.projectuser.util;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;

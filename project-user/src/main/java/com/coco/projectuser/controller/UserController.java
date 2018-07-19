@@ -1,10 +1,11 @@
-package com.chinamobile.projectuser.controller;
+package com.coco.projectuser.controller;
 
-import com.chinamobile.projectuser.datavo.ResultVo;
-import com.chinamobile.projectuser.form.User;
-import com.chinamobile.projectuser.service.UserService;
-import com.chinamobile.projectuser.util.ResultVoUtil;
 
+
+import com.coco.projectuser.datavo.ResultVo;
+import com.coco.projectuser.form.User;
+import com.coco.projectuser.service.UserService;
+import com.coco.projectuser.util.ResultVoUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,7 +32,7 @@ public class UserController {
     UserService userService;
 
     @PostMapping("login")
-    public ResultVo login( @RequestBody Map <String,String> map, HttpServletRequest request) {
+    public ResultVo login(@RequestBody Map <String,String> map, HttpServletRequest request) {
         User thisUser = userService.getUser(map,request);
         if (thisUser == null) {
             return ResultVoUtil.fail();

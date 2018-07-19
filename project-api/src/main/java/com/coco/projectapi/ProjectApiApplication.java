@@ -1,4 +1,4 @@
-package com.chinamobile.projectapi;
+package com.coco.projectapi;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -8,7 +8,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @EnableEurekaClient
 @SpringBootApplication
-@EnableFeignClients(basePackages = "com.chinamobile.projectapi.client")
+@EnableFeignClients(basePackages = "com.coco.projectapi.client")
 public class ProjectApiApplication {
 
     public static void main(String[] args) {

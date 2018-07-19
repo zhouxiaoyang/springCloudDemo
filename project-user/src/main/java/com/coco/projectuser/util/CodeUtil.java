@@ -1,4 +1,4 @@
-package com.chinamobile.projectuser.util;
+package com.coco.projectuser.util;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;

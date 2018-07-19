@@ -1,9 +1,9 @@
-package com.chinamobile.projectuser.service.impl;
+package com.coco.projectuser.service.impl;
 
-import com.chinamobile.projectuser.dao.UserDao;
-import com.chinamobile.projectuser.form.User;
-import com.chinamobile.projectuser.service.UserService;
-import com.chinamobile.projectuser.util.CookieUtil;
+import com.coco.projectuser.dao.UserDao;
+import com.coco.projectuser.form.User;
+import com.coco.projectuser.service.UserService;
+import com.coco.projectuser.util.CookieUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;

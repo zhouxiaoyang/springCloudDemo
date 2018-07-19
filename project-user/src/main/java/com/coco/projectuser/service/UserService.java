@@ -1,6 +1,6 @@
-package com.chinamobile.projectuser.service;
+package com.coco.projectuser.service;
 
-import com.chinamobile.projectuser.form.User;
+import com.coco.projectuser.form.User;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.Map;

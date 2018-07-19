@@ -1,4 +1,4 @@
-package com.chinamobile.projectuser.datavo;
+package com.coco.projectuser.datavo;
 
 /**
  * 返回结果集对象

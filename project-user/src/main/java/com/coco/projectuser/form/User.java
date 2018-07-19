@@ -1,4 +1,4 @@
-package com.chinamobile.projectuser.form;
+package com.coco.projectuser.form;
 
 /**
  * @Description: 用户实体类

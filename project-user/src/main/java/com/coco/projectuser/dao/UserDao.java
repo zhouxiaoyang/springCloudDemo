@@ -1,6 +1,6 @@
-package com.chinamobile.projectuser.dao;
+package com.coco.projectuser.dao;
 
-import com.chinamobile.projectuser.form.User;
+import com.coco.projectuser.form.User;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 

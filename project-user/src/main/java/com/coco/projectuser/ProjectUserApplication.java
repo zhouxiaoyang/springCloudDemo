@@ -1,4 +1,4 @@
-package com.chinamobile.projectuser;
+package com.coco.projectuser;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
@@ -7,7 +7,7 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 @EnableEurekaClient
-@MapperScan("com.chinamobile.projectuser.dao")
+@MapperScan("com.coco.projectuser.dao")
 @SpringBootApplication
 
 public class ProjectUserApplication {

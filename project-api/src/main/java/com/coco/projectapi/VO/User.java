@@ -1,4 +1,4 @@
-package com.chinamobile.projectapi.VO;
+package com.coco.projectapi.VO;
 
 /**
  * @Description: 用户实体类
