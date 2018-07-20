@@ -21,10 +21,11 @@ public class AdminController {
     @Autowired
     AdminService adminService;
 
-    @GetMapping("getUserList")
-    public ResultVo getUserList(@RequestParam(name = "currentPage",defaultValue = "1") Integer currentPage,
-           @RequestParam(name = "pageSize",defaultValue = "10") Integer pageSize){
-
+    @GetMapping("getUserList/{page}/{pageSize}")
+    public ResultVo getUserList(@PathVariable("page") Integer page,
+                                @PathVariable("pageSize") Integer pageSize){
+        Integer currentPage= page==null ? 1:page;
+        pageSize= pageSize==null ? 10:pageSize;
         Map<String,Object>map=adminService.getUserList(currentPage,pageSize);
         return ResultVoUtil.success(map);
 
@@ -49,8 +50,8 @@ public class AdminController {
         return ResultVoUtil.success();
     }
 
-    @PostMapping("/deleteUser")
-    public ResultVo deleteUser(@RequestParam Integer id){
+    @PostMapping("/deleteUser/{id}")
+    public ResultVo deleteUser(@PathVariable("id") Integer id){
 
         if (adminService.deleteUser(id)!=1){
             return ResultVoUtil.fail();

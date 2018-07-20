@@ -1,4 +1,4 @@
-###获取验证码
+### 获取验证码
 
 URL
 ```
@@ -14,7 +14,7 @@ GET  /project/getCode
 ```
 ```
 
-###用户登录
+### 用户登录
 
 URL
 ```
@@ -39,11 +39,13 @@ identifyingCode:"A12B"
 }	
 ```
 
-###获取用户列表
+### 获取用户列表
 
 URL
 ```
-GET  /project/admin/getUserList
+GET  /project/admin/getUserList/{currentPage}/{pageSize}
+
+eg:   /project/admin/getUserList/1/10
 ```
 
 参数
@@ -86,7 +88,7 @@ pageSize:"10"
 }
 ```
 
-###添加用户
+### 添加用户
 
 URL
 ```
@@ -111,7 +113,7 @@ address:"xxxx"
 }
 ```
 
-###修改用户信息
+### 修改用户信息
 
 URL
 ```
@@ -137,18 +139,19 @@ address:"xxxx"
 }
 ```
 
-###删除用户
+### 删除用户
 
 URL
 ```
-POST  /project/admin/deleteUser
+POST  /project/admin/deleteUser/{id}
+
+eg:   /project/admin/deleteUser/5
 ```
 
 参数
 
 ```
-id:"2",
-
+id="5"
 ```
 
 返回
