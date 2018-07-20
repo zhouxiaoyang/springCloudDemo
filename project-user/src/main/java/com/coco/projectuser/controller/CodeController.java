@@ -1,13 +1,12 @@
 package com.coco.projectuser.controller;
 
 
-
 import com.coco.projectuser.util.Code;
 import com.coco.projectuser.util.CookieUtil;
 import com.coco.projectuser.util.UuidUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
-import org.springframework.web.bind.annotation.GetMapping;
+
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -17,8 +16,7 @@ import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
+
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -31,8 +29,6 @@ import java.util.concurrent.TimeUnit;
 public class CodeController {
     @Autowired
     StringRedisTemplate stringRedisTemplate;
-
-
 
     @RequestMapping("getCode")
     public void getCode(HttpServletRequest request, HttpServletResponse response) {
@@ -56,7 +52,6 @@ public class CodeController {
         ServletOutputStream out = null;
 
         try {
-
             out = response.getOutputStream();
             ImageIO.write(code1.getBuffImage(), "jpeg", out);
         } catch (IOException e) {

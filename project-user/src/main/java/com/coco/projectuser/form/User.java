@@ -11,6 +11,26 @@ public class User {
     private String tel;
     private String password;
     private String username;
+    private String address;
+
+    public User() {
+
+    }
+
+    public User(String tel, String password, String username, String address) {
+        this.tel = tel;
+        this.password = password;
+        this.username = username;
+        this.address = address;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
 
     public String getUsername() {
         return username;
