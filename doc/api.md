@@ -39,8 +39,123 @@ identifyingCode:"A12B"
 }	
 ```
 
-###zuul路由开发
+###获取用户列表
 
-待开发
+URL
 ```
+GET  /project/admin/getUserList
+```
+
+参数
+
+```
+currentPage:"1",
+pageSize:"10"
+```
+
+返回
+```
+{
+  "code": 0,
+  "msg": "操作成功!",
+  "data": {
+    "userList": [
+      {
+        "password": "123456",
+        "tel": "13412341234",
+        "id": 1,
+        "username": "张三"
+      },
+      {
+        "password": "12345456",
+        "address": "bbbb",
+        "tel": "127672672",
+        "id": 2,
+        "username": "aaa"
+      },
+      {
+        "password": "12345456",
+        "address": "bbbb",
+        "tel": "127672672",
+        "id": 4,
+        "username": "aaa"
+      }
+    ],
+    "size": 0
+  }
+}
+```
+
+###添加用户
+
+URL
+```
+POST  /project/admin/addUser
+```
+
+参数
+
+```
+tel:"13412341234",
+username:"张三",
+password:"12233",
+address:"xxxx"
+```
+
+返回
+```
+{
+  "code": 0,
+  "msg": "操作成功!",
+  "data": null
+}
+```
+
+###修改用户信息
+
+URL
+```
+POST  /project/admin/updateUser
+```
+
+参数
+
+```
+id:"2",
+tel:"13412341234",
+username:"张三",
+password:"12233",
+address:"xxxx"
+```
+
+返回
+```
+{
+  "code": 0,
+  "msg": "操作成功!",
+  "data": null
+}
+```
+
+###删除用户
+
+URL
+```
+POST  /project/admin/deleteUser
+```
+
+参数
+
+```
+id:"2",
+
+```
+
+返回
+```
+{
+  "code": 0,
+  "msg": "操作成功!",
+  "data": null
+}
 ```

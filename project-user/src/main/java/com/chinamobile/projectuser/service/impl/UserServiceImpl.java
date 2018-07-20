@@ -30,12 +30,11 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User getUser(Map<String,String> map, HttpServletRequest request) {
-        //String uuid=map.get("uuid");
-        String code=map.get("identifyingCode");
 
+        String code=map.get("identifyingCode");
         String uuidByCookie=CookieUtil.get(request,"codeaddress").getValue();
         String codeIn=stringRedisTemplate.opsForValue().get(uuidByCookie);
-        System.out.println("codeIn=="+codeIn+"   ---- codeby qian:="+code);
+        //System.out.println("codeIn=="+codeIn+"   ---- codeby qian:="+code);
         if (!code.equalsIgnoreCase(codeIn)) {
             System.out.println("验证码不对!!");
             return  null;

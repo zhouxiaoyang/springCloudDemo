@@ -29,8 +29,6 @@ public class CodeController {
     @Autowired
     StringRedisTemplate stringRedisTemplate;
 
-
-
     @RequestMapping("getCode")
     public void getCode(HttpServletRequest request, HttpServletResponse response) {
         response.setDateHeader("Expires", 0);

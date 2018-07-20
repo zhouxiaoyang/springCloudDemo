@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.chinamobile.projectuser.dao.AdminDao">
+
+    <select id="getUserList" resultType="java.util.Map">
+        select
+        * from project_user
+        limit #{start},#{pageSize}
+    </select>
+
+    <select id="getUserCount" resultType="int">
+        select
+        count(*) from project_user
+
+    </select>
+
+    <insert id="insertUser" parameterType="com.chinamobile.projectuser.form.User">
+        INSERT INTO project_user (username,tel,password,address)
+        VALUES
+        (#{username},#{tel},#{password},#{address})
+    </insert>
+
+    <update id="updateUser" parameterType="com.chinamobile.projectuser.form.User">
+    update project_user
+      SET username=#{username},
+      tel=#{tel},
+      password=#{password},
+      address=#{address}
+    where id = #{id}
+    </update>
+
+    <delete id="removeUser">
+    delete from project_user  where id = #{id}
+    </delete>
+
+
+
+
+</mapper>
