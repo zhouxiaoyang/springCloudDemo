@@ -29,13 +29,6 @@ public class CodeController {
     @Autowired
     StringRedisTemplate stringRedisTemplate;
 
-    @GetMapping("getUUID")
-    public Object getUUID() {
-        Map<String, Object> map = new HashMap<>();
-        map.put("code", 0);
-        map.put("uuid", UuidUtil.getUUID());
-        return map;
-    }
 
 
     @RequestMapping("getCode")
