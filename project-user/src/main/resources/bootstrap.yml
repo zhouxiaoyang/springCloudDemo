@@ -4,8 +4,8 @@ eureka:
       defaultZone: http://localhost:8001/eureka/
 server:
   port: 8002
-  servlet:
-    context-path: /project
+#  servlet:
+#    context-path: /project
 spring:
   application:
     name: project-user

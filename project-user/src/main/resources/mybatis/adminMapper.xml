@@ -15,13 +15,13 @@
 
     </select>
 
-    <insert id="insertUser" parameterType="com.chinamobile.projectuser.form.User">
+    <insert id="insertUser" parameterType="com.coco.projectuser.form.User">
         INSERT INTO project_user (username,tel,password,address)
         VALUES
         (#{username},#{tel},#{password},#{address})
     </insert>
 
-    <update id="updateUser" parameterType="com.chinamobile.projectuser.form.User">
+    <update id="updateUser" parameterType="com.coco.projectuser.form.User">
     update project_user
       SET username=#{username},
       tel=#{tel},
