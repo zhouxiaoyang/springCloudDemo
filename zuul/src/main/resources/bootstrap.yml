@@ -1,0 +1,30 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8001/eureka/
+server:
+  port: 9000
+spring:
+  application:
+    name: zuul
+  cloud:
+      config:
+        discovery:
+          enabled: true
+          service-id: PROJECT-CONFIG
+        profile: dev
+
+#由于本地测试服务启动过多  响应时间过长  设置ribbon超时时间  确保测试通过
+ribbon:
+  ReadTimeout: 60000
+  ConnectTimeout: 60000
+
+zuul:
+  routes:
+    project-user: /project/**
+    project-config: /config/**
+#
+#management:
+#  security:
+#    enabled: false
+
