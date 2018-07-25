@@ -8,6 +8,7 @@ spring:
           uri: https://github.com/zhouxiaoyang/testConfig.git
           username:
           password:
+          #这个地址是config server 从git仓库中拉取的配置文件的本地存放位置
           basedir: E:\gitforspringcloud\springCloudDemo\project-config\basedir
 eureka:
   client:
