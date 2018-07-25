@@ -1,5 +1,7 @@
 package com.coco.projectuser.util;
 
+import org.springframework.util.StringUtils;
+
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -16,6 +18,7 @@ public class CookieUtil {
 
     public static void  addCookie(HttpServletResponse response,String name,String value,int exprie){
         Cookie cookie =new Cookie(name ,value);
+        cookie.setPath("/");
         cookie.setMaxAge(exprie);
         response.addCookie(cookie);
     }

@@ -18,13 +18,22 @@ spring:
 ribbon:
   ReadTimeout: 60000
   ConnectTimeout: 60000
-
 zuul:
-  routes:
-    project-user: /project/**
-    project-config: /config/**
+  ignore-security-headers: true
+  sensitive-headers:  "*"
 #
-#management:
-#  security:
-#    enabled: false
+#zuul:
+#  routes:
+#    project-user: /project/**
+#    project-config: /config/**
+#   #设置所有服务都可传递cookie
+#  ignore-security-headers:
+      #排除某些路由
+#    ignored-patterns:
+#    - /**/product/listForOrder
+#
+#spring:
+#  redis:
+#    port: 6379
+#    host: 127.0.0.1
 

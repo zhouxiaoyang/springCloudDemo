@@ -43,7 +43,7 @@ public class CodeController {
         String uuidCookie;
         if (CookieUtil.get(request, "codeaddress") == null) {
             uuidCookie = UuidUtil.getUUID();
-            CookieUtil.addCookie(response, "codeaddress", uuidCookie, -1);
+            CookieUtil.addCookie(response, "codeaddress", uuidCookie,-1);
         } else {
             uuidCookie = CookieUtil.get(request, "codeaddress").getValue();
         }
