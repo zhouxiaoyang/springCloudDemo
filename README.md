@@ -1,28 +1,28 @@
 # springCloudDemo
 
-### springcloud学习用demo
+### springcloud demo for study
 
-1. 首先启动project-server 
-
-```
-这个eurekaServer 注册中心
-```
-
-2. 启动project-config
+1. first start project-server  project
 
 ```
-这个是统一配置中心
+this is a eurekaServer 
 ```
 
-3. 启动project-user
+2. start project-config project
 
 ```
-这个是用户服务
+This is the unified configuration center
 ```
 
-4. 启动zuul
+3. start project-user project
+
 ```
-这个是服务网关
+ user service 
+```
+
+4. start zuul
+```
+Service gateway
 ```
  
- >* project-api 测试用 
+ >* project-api tesing, not used
